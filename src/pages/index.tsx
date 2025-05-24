@@ -1,5 +1,5 @@
 import data from '@/data/almanaque.json';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Montserrat } from 'next/font/google'
 import { Card } from '@/components/Card';
 import { Filter } from '@/components/Filter';

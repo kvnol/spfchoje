@@ -1,4 +1,4 @@
-import { MdCalendarToday, MdStadium, MdYoutubeSearchedFor } from 'react-icons/md';
+import { MdCalendarToday, MdStadium } from 'react-icons/md';
 import * as S from './style';
 import { BsYoutube } from 'react-icons/bs';
 
