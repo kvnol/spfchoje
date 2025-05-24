@@ -8,6 +8,8 @@ export const Filter = styled.div`
 export const FilterInput = styled.input`
   appearance: none;
   border: 0;
+  margin: 0;
+  padding: 0;
   border-bottom: 1px dotted var(--red-light);
   width: 2.2ch;
   background-color: transparent;
