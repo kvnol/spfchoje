@@ -41,7 +41,54 @@ export const Filter = ({value, onChange}: TFilter) => {
 
   return (
     <S.Filter>
-      no dia <S.FilterInput type="text" value={day} onChange={(e) => setDay(format(e.target.value, 31))} onBlur={doFilter} maxLength={2} /> do <S.FilterInput type="text" value={month} onChange={(e) => setMonth(format(e.target.value, 12))} onBlur={doFilter} maxLength={2} />.
+      no dia{' '}
+      <S.FilterInput
+        type="text"
+        value={day}
+        maxLength={2}
+        inputMode="numeric"
+        onChange={(e) => {
+          const raw = e.target.value.replace(/\D/g, '');
+          setDay(raw);
+        }}
+        onBlur={() => {
+          const formatted = format(day, 31);
+          setDay(formatted);
+          doFilter();
+        }}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            const formatted = format(day, 31);
+            setDay(formatted);
+            doFilter();
+            e.currentTarget.blur();
+          }
+        }}
+      />{' '}
+      do{' '}
+      <S.FilterInput
+        type="text"
+        value={month}
+        maxLength={2}
+        inputMode="numeric"
+        onChange={(e) => {
+          const raw = e.target.value.replace(/\D/g, '');
+          setMonth(raw);
+        }}
+        onBlur={() => {
+          const formatted = format(month, 12);
+          setMonth(formatted);
+          doFilter();
+        }}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            const formatted = format(month, 12);
+            setMonth(formatted);
+            doFilter();
+            e.currentTarget.blur();
+          }
+        }}
+      />.
     </S.Filter>
   )
 }

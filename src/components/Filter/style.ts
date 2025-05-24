@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
 export const Filter = styled.div`
-  font-size: 3rem;
+  font-size: 2rem;
   color: var(--white-dark);
+  
+  @media (width >= 480px) {
+    font-size: 3rem;
+  }
 `
 
 export const FilterInput = styled.input`
